@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Хүрд цээжлүүлэх тоглоом</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <h1>Хүрд цээжлүүлэх 🎯</h1>
+      <div class="stats">
+        <div class="pill">Оноо: <b id="score">0</b></div>
+        <div class="pill">Зөв: <b id="correct">0</b></div>
+        <div class="pill">Буруу: <b id="wrong">0</b></div>
+        <div class="pill">Үлдсэн: <b id="time">60</b>s</div>
+        <div class="pill">High: <b id="high">0</b></div>
+        <div class="pill">Стрик: <b id="streak">0</b></div>
+<div class="pill">Best: <b id="bestStreak">0</b></div>
+      </div>
+    </header>
+
+    <section class="panel">
+      <div class="controls">
+        <label>
+            <label>
+  Түвшин:
+  <select id="level">
+    <option value="1">Level 1 (1–5)</option>
+    <option value="2">Level 2 (1–9)</option>
+    <option value="3" selected>Level 3 (1–12)</option>
+  </select>
+</label>
+
+<label>
+  Давтлага:
+  <select id="practice">
+    <option value="off" selected>Унтраалттай</option>
+    <option value="mixed">Алдааг түлхүү</option>
+    <option value="only">Зөвхөн алдаа</option>
+  </select>
+</label>
+
+          Хүрд (1–12):
+          <select id="tableSelect"></select>
+        </label>
+
+        <label>
+          Хүчин зүйл (1–12):
+          <select id="multSelect"></select>
+        </label>
+
+        <label>
+          Горим:
+          <select id="mode">
+            <option value="mixed">Холимог</option>
+            <option value="fixedTable">Нэг хүрд</option>
+            <option value="fixedMultiplier">Нэг хүчин зүйл</option>
+          </select>
+        </label>
+
+        <label>
+          Хугацаа:
+          <select id="duration">
+            <option value="30">30с</option>
+            <option value="60" selected>60с</option>
+            <option value="90">90с</option>
+            <option value="120">120с</option>
+          </select>
+        </label>
+
+        <button id="startBtn" class="btn primary">Эхлэх</button>
+        <button id="resetBtn" class="btn">Дахин</button>
+      </div>
+
+      <div class="quiz">
+        <div class="question" aria-live="polite">
+          <span id="a">-</span>
+          <span class="x">×</span>
+          <span id="b">-</span>
+          <span class="eq">=</span>
+          <span class="qmark">?</span>
+        </div>
+
+        <div class="answerRow">
+          <input id="answer" type="number" inputmode="numeric" placeholder="Хариу..." autocomplete="off" />
+          <button id="submitBtn" class="btn primary">Шалгах</button>
+        </div>
+
+        <div id="feedback" class="feedback"></div>
+        <p class="hint">⌨️ Enter = шалгах, Esc = дуусгах</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Алдаанууд (давтлага)</h2>
+      <div id="mistakes" class="mistakes empty">Одоогоор алдаа алга 🙂</div>
+    </section>
+
+    <footer class="footer">
+      <small>Санаа: өдөр бүр 5–10 минут тоглоход хурдан сайжирна.</small>
+    </footer>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+</html>
